@@ -4,15 +4,15 @@
 void NewBoard(char *spaces){
   std::cout << std::endl;
   std::cout << "     |     |     " << std::endl;
-  std::cout << "  " << spaces[0] << " | " << spaces[1] << " | " << spaces[2] << " | " << std::endl;
+  std::cout << "  " << spaces[0] << "  |  " << spaces[1] << "  |  " << spaces[2] << "   " << std::endl;
   std::cout << "_____|_____|_____" << std::endl;
   std::cout << "     |     |     " << std::endl;
-  std::cout << "  " << spaces[3] << " | " << spaces[4] << " | " << spaces[5] << " | " << std::endl;
+  std::cout << "  " << spaces[3] << "  |  " << spaces[4] << "  |  " << spaces[5] << "   " << std::endl;
   std::cout << "_____|_____|_____" << std::endl;
   std::cout << "     |     |     " << std::endl;
-  std::cout << "  " << spaces[6] << " | " << spaces[7] << " | " << spaces[8] << " | " << std::endl;
+  std::cout << "  " << spaces[6] << "  |  " << spaces[7] << "  |  " << spaces[8] << "   " << std::endl;
   std::cout << "     |     |     " << std::endl;
-  std:endl;
+  std::cout << std::endl;
 
 }
 void playerMove(char *spaces, char player){
@@ -37,34 +37,35 @@ void computerMove(char *spaces, char computer){
     if(spaces[number] == ' '){
       spaces[number] = computer;
       break;
+    }
   }
 }
 
 bool checkWinner(char *spaces, char player, char computer){
 
-  if((space[0] != ' ') && (space[0] == spaces[1]) && (spaces[1] == spaces[2])){
-    space[0] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
+  if((spaces[0] != ' ') && (spaces[0] == spaces[1]) && (spaces[1] == spaces[2])){
+    spaces[0] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
   }
-  else if((space[3] != ' ') && (space[3] == spaces[4]) && (spaces[4] == spaces[5])){
-    space[3] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
+  else if((spaces[3] != ' ') && (spaces[3] == spaces[4]) && (spaces[4] == spaces[5])){
+    spaces[3] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
   }
-  else if((space[6] != ' ') && (space[6] == spaces[7]) && (spaces[7] == spaces[8])){
-    space[6] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
+  else if((spaces[6] != ' ') && (spaces[6] == spaces[7]) && (spaces[7] == spaces[8])){
+    spaces[6] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
   }
-  else if((space[0] != ' ') && (space[0] == spaces[3]) && (spaces[3] == spaces[6])){
-    space[0] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
+  else if((spaces[0] != ' ') && (spaces[0] == spaces[3]) && (spaces[3] == spaces[6])){
+    spaces[0] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
   }
-  else if((space[1] != ' ') && (space[1] == spaces[4]) && (spaces[4] == spaces[7])){
-    space[1] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
+  else if((spaces[1] != ' ') && (spaces[1] == spaces[4]) && (spaces[4] == spaces[7])){
+    spaces[1] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
   }
-  else if((space[2] != ' ') && (space[2] == spaces[5]) && (spaces[5] == spaces[8])){
-    space[2] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
+  else if((spaces[2] != ' ') && (spaces[2] == spaces[5]) && (spaces[5] == spaces[8])){
+    spaces[2] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
   }
-  else if((space[0] != ' ') && (space[0] == spaces[4]) && (spaces[4] == spaces[8])){
-    space[0] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
+  else if((spaces[0] != ' ') && (spaces[0] == spaces[4]) && (spaces[4] == spaces[8])){
+    spaces[0] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
   }
-  else if((space[2] != ' ') && (space[2] == spaces[4]) && (spaces[4] == spaces[6])){
-    space[2] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
+  else if((spaces[2] != ' ') && (spaces[2] == spaces[4]) && (spaces[4] == spaces[6])){
+    spaces[2] == player ? std::cout << "You Win!!!" << std::endl : std::cout << "You Lose!" << std::endl;
   }
   else{
     return false;
@@ -96,7 +97,7 @@ int main(){
   while(running){
 
     playerMove(spaces, player);
-    drawBoard(spaces);
+    NewBoard(spaces);
     if(checkWinner(spaces, player, computer)){
       running = false;
       break;
@@ -107,7 +108,7 @@ int main(){
     }
     
     computerMove(spaces, computer);
-    drawBoard(spaces);
+    NewBoard(spaces);
     if(checkWinner(spaces, player, computer)){
       running = false;
       break;
